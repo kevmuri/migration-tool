@@ -20,8 +20,8 @@ scriptpath = values[2]
 if event == sg.WIN_CLOSED or event == 'Quit':
     exit
 elif not inputfile or not logpath or not scriptpath:
-    sg.popup("Cancelled.", "Missing field.")
-    raise SystemExit("Cancelling: Missing field")
+    sg.popup("Cancelled.", "Missing field(s).")
+    raise SystemExit("ERROR!")
 else:
     # saving double quotes into a variable for readability
     dq = '"'
@@ -55,4 +55,5 @@ else:
     
     #moves robocopyscript to destination
     shutil.move(outfilename, scriptpath)
-    raise SystemExit("Complete. Robocopy script can be found at: "+scriptpath)
+    sg.popup("Complete. Robocopy script can be found at: "+scriptpath)
+    raise SystemExit("Complete.")
