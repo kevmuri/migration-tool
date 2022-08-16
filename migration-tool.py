@@ -42,7 +42,7 @@ else:
         logname = logname.replace(" ","")
         logname = '/' + logname
         # this crazy thing below writes a whole robocopy script to one variable. line by line: robocopy.exe "source" "destination" flags+logname
-        output = 'robocopy.exe ' + dq + database[i][0] + dq + ' ' + dq + database[i][1] + dq + flags + logname + '_' + str(i) + '_log.txt' + "\n"
+        output = 'robocopy.exe ' + dq + database[i][0] + dq + ' ' + dq + database[i][1] + dq + flags + logname + '_' + str(i+1) + '_log.txt' + "\n"
         # visual feedback is nice
         print(output)
         # prints the robocopy scripts to output.cmd
